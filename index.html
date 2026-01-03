@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Pursuit System — Economics of Participation</title>
+    
+    <!-- Meta description -->
+    <meta name="description" content="Sustaining capitalism and property rights through participation-based transfer payment mechanisms. A framework for post-labor economics.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pursuebetter.org/">
+    <meta property="og:title" content="The Pursuit System — Economics of Participation">
+    <meta property="og:description" content="Sustaining capitalism and property rights through participation-based transfer payment mechanisms. A framework for post-labor economics.">
+    <meta property="og:image" content="https://pursuebetter.org/og-image.png">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://pursuebetter.org/">
+    <meta name="twitter:title" content="The Pursuit System — Economics of Participation">
+    <meta name="twitter:description" content="Sustaining capitalism and property rights through participation-based transfer payment mechanisms. A framework for post-labor economics.">
+    <meta name="twitter:image" content="https://pursuebetter.org/og-image.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Fonts: Crimson Pro for body (academic serif), Cormorant for display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Indigo palette */
+            --indigo-50: #EEF2FF;
+            --indigo-100: #E0E7FF;
+            --indigo-200: #C7D2FE;
+            --indigo-400: #818CF8;
+            --indigo-500: #6366F1;
+            --indigo-600: #4F46E5;
+            --indigo-700: #4338CA;
+            --indigo-800: #3730A3;
+            --indigo-900: #312E81;
+            
+            /* Neutrals */
+            --white: #FFFFFF;
+            --gray-50: #F9FAFB;
+            --gray-100: #F3F4F6;
+            --gray-400: #9CA3AF;
+            --gray-500: #6B7280;
+            --gray-600: #4B5563;
+            --gray-800: #1F2937;
+            --gray-900: #111827;
+            --text-primary: #1a1a2e;
+            
+            /* Typography scale */
+            --font-display: 'Cormorant', Georgia, serif;
+            --font-body: 'Crimson Pro', Georgia, serif;
+            
+            /* Spacing */
+            --content-width: 680px;
+            --wide-width: 900px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            font-size: 18px;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            line-height: 1.75;
+            color: var(--text-primary);
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* ========== NAVIGATION ========== */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--gray-100);
+            transition: box-shadow 0.3s ease;
+        }
+        
+        nav.scrolled {
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+        
+        .nav-inner {
+            max-width: var(--wide-width);
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--gray-900);
+            text-decoration: none;
+            letter-spacing: -0.01em;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            font-family: var(--font-body);
+            font-size: 0.875rem;
+            color: var(--gray-500);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            transition: color 0.2s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--indigo-600);
+        }
+        
+        /* ========== HERO ========== */
+        .hero {
+            padding: 10rem 2rem 5rem;
+            max-width: var(--content-width);
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .hero-eyebrow {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--indigo-600);
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 400;
+            line-height: 1.15;
+            color: var(--gray-900);
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+        
+        .hero-subtitle {
+            font-family: var(--font-body);
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: var(--gray-500);
+            line-height: 1.6;
+            max-width: 540px;
+            margin: 0 auto;
+        }
+        
+        .hero-divider {
+            width: 60px;
+            height: 1px;
+            background: var(--indigo-200);
+            margin: 3rem auto;
+        }
+        
+        /* ========== ARTICLE CONTENT ========== */
+        article {
+            max-width: var(--content-width);
+            margin: 0 auto;
+            padding: 0 2rem 6rem;
+        }
+        
+        article p {
+            margin-bottom: 1.5rem;
+        }
+        
+        article h2 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 500;
+            color: var(--gray-900);
+            margin: 4rem 0 1.5rem;
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+        }
+        
+        article h2:first-of-type {
+            margin-top: 0;
+        }
+        
+        article h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--gray-800);
+            margin: 3rem 0 1rem;
+            letter-spacing: -0.01em;
+        }
+        
+        /* Links */
+        article a {
+            color: var(--indigo-600);
+            text-decoration: none;
+            border-bottom: 1px solid var(--indigo-200);
+            transition: border-color 0.2s ease, color 0.2s ease;
+        }
+        
+        article a:hover {
+            color: var(--indigo-700);
+            border-color: var(--indigo-400);
+        }
+        
+        /* ========== PULL QUOTES ========== */
+        .pullquote {
+            position: relative;
+            margin: 3rem 0;
+            padding: 2rem 0 2rem 2rem;
+            border-left: 3px solid var(--indigo-400);
+        }
+        
+        .pullquote blockquote {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-style: italic;
+            font-weight: 400;
+            line-height: 1.5;
+            color: var(--gray-800);
+            margin: 0;
+        }
+        
+        .pullquote cite {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 0.875rem;
+            font-style: normal;
+            font-weight: 500;
+            color: var(--gray-500);
+            margin-top: 1rem;
+            letter-spacing: 0.01em;
+        }
+        
+        .pullquote cite span {
+            font-weight: 400;
+            color: var(--gray-400);
+        }
+        
+        /* ========== EMPHASIZED SECTIONS ========== */
+        .emphasis-box {
+            background: var(--indigo-50);
+            border-radius: 4px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+        }
+        
+        .emphasis-box p:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* ========== SECTION DIVIDERS ========== */
+        .section-break {
+            text-align: center;
+            margin: 4rem 0;
+            color: var(--indigo-300);
+            font-size: 1.5rem;
+            letter-spacing: 0.5em;
+        }
+        
+        /* ========== NUMBERED ASSERTIONS ========== */
+        .assertions {
+            margin: 2rem 0;
+        }
+        
+        .assertion {
+            display: flex;
+            gap: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .assertion-number {
+            flex-shrink: 0;
+            width: 2rem;
+            height: 2rem;
+            background: var(--indigo-600);
+            color: var(--white);
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 500;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 0.15rem;
+        }
+        
+        .assertion p {
+            margin: 0;
+            flex: 1;
+        }
+        
+        .assertion strong {
+            color: var(--gray-900);
+        }
+        
+        /* ========== CTA SECTIONS ========== */
+        .cta-section {
+            background: linear-gradient(135deg, var(--indigo-50) 0%, var(--white) 100%);
+            border: 1px solid var(--indigo-100);
+            border-radius: 6px;
+            padding: 2.5rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .cta-section h3 {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 500;
+            color: var(--gray-900);
+            margin: 0 0 1rem;
+        }
+        
+        .cta-section p {
+            color: var(--gray-600);
+            margin-bottom: 1.5rem;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--white);
+            background: var(--indigo-600);
+            padding: 0.875rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+        
+        .cta-button:hover {
+            background: var(--indigo-700);
+            transform: translateY(-1px);
+        }
+        
+        .cta-secondary {
+            display: inline-block;
+            font-family: var(--font-body);
+            font-size: 0.875rem;
+            color: var(--indigo-600);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            border-bottom: 1px solid var(--indigo-200);
+        }
+        
+        .cta-secondary:hover {
+            color: var(--indigo-700);
+            border-color: var(--indigo-400);
+        }
+        
+        /* ========== FOOTER ========== */
+        footer {
+            border-top: 1px solid var(--gray-100);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .footer-inner {
+            max-width: var(--content-width);
+            margin: 0 auto;
+        }
+        
+        .footer-logo {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+        
+        .footer-text {
+            font-size: 0.875rem;
+            color: var(--gray-400);
+            line-height: 1.6;
+        }
+        
+        .footer-links {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+        
+        .footer-links a {
+            font-size: 0.8rem;
+            color: var(--gray-400);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: color 0.2s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--indigo-600);
+        }
+        
+        /* ========== READING PROGRESS ========== */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 2px;
+            background: var(--indigo-500);
+            z-index: 101;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+        
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            html {
+                font-size: 17px;
+            }
+            
+            .hero {
+                padding: 8rem 1.5rem 3rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            article {
+                padding: 0 1.5rem 4rem;
+            }
+            
+            .pullquote {
+                margin: 2rem -0.5rem;
+                padding: 1.5rem;
+                padding-left: 1.5rem;
+            }
+            
+            .pullquote blockquote {
+                font-size: 1.25rem;
+            }
+            
+            .nav-links {
+                gap: 1.5rem;
+            }
+            
+            .nav-links a {
+                font-size: 0.75rem;
+            }
+            
+            .assertion {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+        }
+        
+        /* ========== SMOOTH ANCHOR OFFSET ========== */
+        section[id] {
+            scroll-margin-top: 5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Reading progress bar -->
+    <div class="progress-bar" id="progress"></div>
+    
+    <!-- Navigation -->
+    <nav id="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">The Pursuit System</a>
+            <ul class="nav-links">
+                <li><a href="#premise">Premise</a></li>
+                <li><a href="#assertions">Core Assertions</a></li>
+                <li><a href="#participation">Economics of Participation</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <header class="hero">
+        <p class="hero-eyebrow">A Framework for Post-Labor Economics</p>
+        <h1>The Pursuit System</h1>
+        <p class="hero-subtitle">Sustaining capitalism and property rights through participation-based transfer payment mechanisms.</p>
+        <div class="hero-divider"></div>
+    </header>
+    
+    <!-- Main Content -->
+    <article>
+        <section id="premise">
+            <h2>Our Premise</h2>
+            
+            <p>Our premise is simple—anticipate that the movement toward socialism will outpace our government's ability to adapt.</p>
+            
+            <div class="pullquote">
+                <blockquote>"Society will begin reorganizing psychologically long before we figure out how to reorganize economically."</blockquote>
+                <cite>Tom Bilyeu <span>— "900 Days Until Capitalism Breaks"</span></cite>
+            </div>
+            
+            <p>The movement is already underway with states like Washington, California and New York shifting toward socialist policies and pushing the bounds of wealth confiscation. For now individuals can flee such states but the logical progression of socialist policy is the state ownership of the means of production, and the elevation of such policy to the federal level where companies cannot simply move.</p>
+            
+            <p>We can ill afford to stand by and "see" if socialism takes hold at the federal level.</p>
+            
+            <div class="emphasis-box">
+                <p><strong>Our mission</strong> is to sustain capitalism and property rights in America through the development of proof of concept programs implementing sustainable transfer payment mechanisms.</p>
+            </div>
+            
+            <div class="pullquote">
+                <blockquote>"Greatest challenge of humanity ever—and overcoming it will also bring the greatest reward."</blockquote>
+                <cite>Ilya Sutskever <span>— University of Toronto Address, Spring 2025</span></cite>
+            </div>
+            
+            <p>If you are a wealth holder, the wager before you is simple yet uncertain. The outcome on one hand anticipates the AI and automation revolution will lead to abundance and that new job classes will arise to appease the broad cross section of American labor, and that income may remain the primary means of taxation.</p>
+            
+            <p>Conversely we can anticipate AI will displace substantial portions of the labor market. Consider the imminent automation of driving occupations alone could shift 5% of our population into joblessness.</p>
+            
+            <p>How we collectively respond to the challenge could be the largest threat to your personal financial estate in your lifetime.</p>
+        </section>
+        
+        <div class="section-break">• • •</div>
+        
+        <section id="assertions">
+            <h2>Core Assertions</h2>
+            
+            <p>We refuse to allow the fate of our nation to chance and an uncertain future. We must be intentional and bring demonstrable solutions to address an arising post-labor economy.</p>
+            
+            <p>We hold three assertions as key drivers of the immediate need for intentionally crafted and tested solutions:</p>
+            
+            <div class="assertions">
+                <div class="assertion">
+                    <div class="assertion-number">1</div>
+                    <p><strong>Socialism is not the answer.</strong> It has always led to corruption, non-meritorious elitism that ultimately results in authoritarianism. Without proactive measures our elected representatives will not outrun the demand of our citizens for socialism—and all wealth and property becomes suspect.</p>
+                </div>
+                
+                <div class="assertion">
+                    <div class="assertion-number">2</div>
+                    <p><strong>Post-labor economics are already underway.</strong> 40% of households are not paying income tax and labor is no longer a viable means of wealth creation. It is an ineffective means of funding our government that results in debt spending and inflation.</p>
+                </div>
+                
+                <div class="assertion">
+                    <div class="assertion-number">3</div>
+                    <p><strong>We must demonstrate alternative economic structures.</strong> Awaiting government to innovate its way out of these challenges puts every citizen stakeholder at risk for generations to come.</p>
+                </div>
+            </div>
+            
+            <h3>Income Tax Is Dead</h3>
+            
+            <p>We can infer from the 40% of households not contributing income tax in 2025 (Tax Policy Center) that nearly half our population does not have means to contribute to society meaningfully through labor. The automation of transport, and even marginal declines in cognitive labor participation due to AI will render this system unsustainable.</p>
+            
+            <p>We must define an alternative means of taxation. As labor is rendered impotent, we have only two paths ahead—tax or confiscation of property and wealth, or taxation on the non-labor means of production.</p>
+            
+            <h3>UBI Does Not Work</h3>
+            
+            <p>Without the ability to change your fate, labor participation collapses, sense of identity collapses, and people fall into helplessness and despair. It's not just a matter of enough money—we need to address the need for social and individual responsibility.</p>
+            
+            <p>To quote Jordan Peterson: <em>"Men don't need money, they need function."</em></p>
+            
+            <p>A core objective is that we restore a feeling of agency and upward mobility ensuring that people have meaning, purpose, and a reason to get up in the morning.</p>
+            
+            <p>Ambition is not purely innate—it is fueled by the environment that surrounds us and the recognition that opportunity and reward are a means by which to address the deeper fundamental need to differentiate oneself. We need a system that enables equality of opportunity but necessarily requires competition, the pursuit of competency, and the recognition of achievement. The equal distribution of subsistence payments does not enable such mechanisms of ambition.</p>
+            
+            <p>There has been a decay in our social fabric and the generational contract—the promise that our children will have the opportunity to exceed the standard of living of those before them, that you can live the American dream and that you can raise a family. Purpose comes from putting food on the table for your family. Purpose comes from the struggle of going to work, not getting a check from the government. Purpose comes from being a useful part of society—contributing and being of service to people.</p>
+            
+            <p>Success is relative and there will always be disparity in the level of outcome, be it fame or affluence. That said, everyone must have the opportunity to achieve more—the pathways to increasing success must be abundant and demonstrably achievable.</p>
+            
+            <p>None of these objectives is achieved from historic UBI structures.</p>
+        </section>
+        
+        <div class="section-break">• • •</div>
+        
+        <section id="participation">
+            <h2>The Economics of Participation</h2>
+            
+            <p>The most valuable commodity on earth is human energy and attention. In a post-labor economy where labor no longer presents a valued opportunity, participation becomes the highest form of value—both limited and scarce.</p>
+            
+            <p>There must be new vehicles by which we can achieve differentiated success, a parallel economic system in which to both distribute the proceeds of production and enable the virtuous cycle of re-investment in assets and the associated means of production.</p>
+            
+            <p>We must first recognize that human time and energy is valuable—it is valuable to families, communities, and nation states. We need connection, we need participation which can take many forms from local library story time to international sporting events. In a post-labor world what we need is a means of rewarding activation as a new economic unit as a parallel alternative to labor.</p>
+            
+            <p>AI will usher in a new cultural renaissance where everyone has the option to contribute in a collective experience. Participation will be the new economic unit that enables people to achieve, generate disposable income, and obtain ownership in the means of production—stocks, bonds, commodities, property, and more.</p>
+            
+            <p>For many this would be the realization of a lifelong fantasy: to get paid for sport, craft, or performing art. What a wonderful world this will be.</p>
+            
+            <div class="emphasis-box">
+                <p>This new economy requires a distribution mechanism that rewards activation—whether that be as spectator, participant, coach, or organizer. For competitive activities a tiered system will allow for increasingly premium rewards over casual leagues—but all focus on a common goal of increasing activations, where higher activation and community participation equates to larger financial rewards.</p>
+            </div>
+        </section>
+        
+        <div class="section-break">• • •</div>
+        
+        <section id="contact">
+            <div class="cta-section">
+                <h3>Support Our Mission</h3>
+                <p>Solving the greatest challenge of humanity will not come free. We are looking for patriots who can afford to help—those willing to deeply contemplate the risk not only to the nation's future, but also the very real risk to one's own financial estate.</p>
+                <a href="#" class="cta-button">Contact Us</a>
+                <a href="#" class="cta-secondary">Learn about funding →</a>
+            </div>
+            
+            <p style="text-align: center; color: var(--gray-500); margin-top: 2rem;">If you are a media outlet or podcaster interested in embracing the conversation, please <a href="#">get in contact</a>.</p>
+        </section>
+    </article>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-logo">The Pursuit System</div>
+            <p class="footer-text">Sustaining capitalism through participation-based economics.</p>
+            <div class="footer-links">
+                <a href="#premise">Premise</a>
+                <a href="#assertions">Assertions</a>
+                <a href="#participation">Participation</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Navigation scroll effect
+        const nav = document.getElementById('nav');
+        const progress = document.getElementById('progress');
+        
+        window.addEventListener('scroll', () => {
+            // Nav shadow on scroll
+            if (window.scrollY > 20) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+            
+            // Reading progress bar
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            progress.style.width = scrollPercent + '%';
+        });
+        
+        // Smooth scroll for anchor links (backup for browsers without CSS support)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
