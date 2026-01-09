@@ -18,4 +18,6 @@ desktop.ini
 # Archives (if you want to exclude the zip file)
 # files.zip
 
+# Exclude v2 directory
+pursuit-system-v2/
 
