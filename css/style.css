@@ -1,0 +1,603 @@
+/* ========================================
+   PursueBetter.org — Main Stylesheet
+   ======================================== */
+
+:root {
+    /* Indigo palette */
+    --indigo-50: #EEF2FF;
+    --indigo-100: #E0E7FF;
+    --indigo-200: #C7D2FE;
+    --indigo-400: #818CF8;
+    --indigo-500: #6366F1;
+    --indigo-600: #4F46E5;
+    --indigo-700: #4338CA;
+    --indigo-800: #3730A3;
+    --indigo-900: #312E81;
+    
+    /* Neutrals */
+    --white: #FFFFFF;
+    --gray-50: #F9FAFB;
+    --gray-100: #F3F4F6;
+    --gray-400: #9CA3AF;
+    --gray-500: #6B7280;
+    --gray-600: #4B5563;
+    --gray-800: #1F2937;
+    --gray-900: #111827;
+    --text-primary: #1a1a2e;
+    
+    /* Typography scale */
+    --font-display: 'Cormorant', Georgia, serif;
+    --font-body: 'Crimson Pro', Georgia, serif;
+    
+    /* Spacing */
+    --content-width: 680px;
+    --wide-width: 900px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 18px;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--text-primary);
+    background: var(--white);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========== NAVIGATION ========== */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--gray-100);
+    transition: box-shadow 0.3s ease;
+}
+
+nav.scrolled {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.nav-inner {
+    max-width: var(--wide-width);
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--gray-900);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+}
+
+.nav-links a {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    color: var(--gray-500);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--indigo-600);
+}
+
+.nav-links a.nav-cta {
+    color: var(--indigo-600);
+    font-weight: 500;
+}
+
+.nav-links a.nav-cta:hover {
+    color: var(--indigo-700);
+}
+
+/* ========== HERO ========== */
+.hero {
+    padding: 7rem 2rem 2rem;
+    max-width: var(--content-width);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-compact {
+    padding: 7rem 2rem 2rem;
+}
+
+.hero-eyebrow {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--indigo-600);
+    margin-bottom: 1rem;
+}
+
+.hero h1 {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--gray-900);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+    font-family: var(--font-body);
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--gray-500);
+    line-height: 1.6;
+    max-width: 540px;
+    margin: 0 auto;
+}
+
+.hero-divider {
+    width: 60px;
+    height: 1px;
+    background: var(--indigo-200);
+    margin: 2rem auto;
+}
+
+/* ========== ARTICLE CONTENT ========== */
+article {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: 0 2rem 6rem;
+}
+
+article p {
+    margin-bottom: 1.5rem;
+}
+
+article h2 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--gray-900);
+    margin: 3rem 0 1.5rem;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+}
+
+article h2:first-of-type {
+    margin-top: 0;
+}
+
+article h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--gray-800);
+    margin: 2.5rem 0 1rem;
+    letter-spacing: -0.01em;
+}
+
+/* Links */
+article a {
+    color: var(--indigo-600);
+    text-decoration: none;
+    border-bottom: 1px solid var(--indigo-200);
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+article a:hover {
+    color: var(--indigo-700);
+    border-color: var(--indigo-400);
+}
+
+/* ========== PULL QUOTES ========== */
+.pullquote {
+    position: relative;
+    margin: 2.5rem 0;
+    padding: 1.5rem 0 1.5rem 2rem;
+    border-left: 3px solid var(--indigo-400);
+}
+
+.pullquote blockquote {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--gray-800);
+    margin: 0;
+}
+
+.pullquote cite {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 500;
+    color: var(--gray-500);
+    margin-top: 0.75rem;
+    letter-spacing: 0.01em;
+}
+
+.pullquote cite span {
+    font-weight: 400;
+    color: var(--gray-400);
+}
+
+/* ========== EMPHASIZED SECTIONS ========== */
+.emphasis-box {
+    background: var(--indigo-50);
+    border-radius: 4px;
+    padding: 1.75rem;
+    margin: 2rem 0;
+}
+
+.emphasis-box p:last-child {
+    margin-bottom: 0;
+}
+
+/* ========== SECTION DIVIDERS ========== */
+.section-break {
+    text-align: center;
+    margin: 3rem 0;
+    color: var(--indigo-300);
+    font-size: 1.5rem;
+    letter-spacing: 0.5em;
+}
+
+/* ========== NUMBERED ASSERTIONS ========== */
+.assertions {
+    margin: 2rem 0;
+}
+
+.assertion {
+    display: flex;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.assertion-number {
+    flex-shrink: 0;
+    width: 2rem;
+    height: 2rem;
+    background: var(--indigo-600);
+    color: var(--white);
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.15rem;
+}
+
+.assertion p {
+    margin: 0;
+    flex: 1;
+}
+
+.assertion strong {
+    color: var(--gray-900);
+}
+
+/* ========== CTA SECTIONS ========== */
+.cta-section {
+    background: linear-gradient(135deg, var(--indigo-50) 0%, var(--white) 100%);
+    border: 1px solid var(--indigo-100);
+    border-radius: 6px;
+    padding: 2.5rem;
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.cta-section h3 {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: var(--gray-900);
+    margin: 0 0 1rem;
+}
+
+.cta-section p {
+    color: var(--gray-600);
+    margin-bottom: 1.5rem;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--white);
+    background: var(--indigo-600);
+    padding: 0.875rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background: var(--indigo-700);
+    transform: translateY(-1px);
+}
+
+.cta-secondary {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    color: var(--indigo-600);
+    text-decoration: none;
+    margin-left: 1.5rem;
+    border-bottom: 1px solid var(--indigo-200);
+}
+
+.cta-secondary:hover {
+    color: var(--indigo-700);
+    border-color: var(--indigo-400);
+}
+
+/* ========== INLINE CTA ========== */
+.inline-cta {
+    text-align: center;
+    color: var(--gray-500);
+    margin-top: 2rem;
+}
+
+.inline-cta a {
+    color: var(--indigo-600);
+    text-decoration: none;
+    border-bottom: 1px solid var(--indigo-200);
+}
+
+.inline-cta a:hover {
+    color: var(--indigo-700);
+    border-color: var(--indigo-400);
+}
+
+/* ========== FOOTER ========== */
+footer {
+    border-top: 1px solid var(--gray-100);
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.footer-inner {
+    max-width: var(--content-width);
+    margin: 0 auto;
+}
+
+.footer-logo {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--gray-900);
+    margin-bottom: 1rem;
+}
+
+.footer-text {
+    font-size: 0.875rem;
+    color: var(--gray-400);
+    line-height: 1.6;
+}
+
+.footer-links {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    font-size: 0.8rem;
+    color: var(--gray-400);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: var(--indigo-600);
+}
+
+/* ========== READING PROGRESS ========== */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    background: var(--indigo-500);
+    z-index: 101;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+/* ========== CONTACT PAGE STYLES ========== */
+.contact-content {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: 0 2rem 6rem;
+}
+
+.contact-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact-intro p {
+    color: var(--gray-600);
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.contact-form {
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--gray-700);
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--gray-200);
+    border-radius: 4px;
+    background: var(--white);
+    color: var(--text-primary);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--indigo-400);
+    box-shadow: 0 0 0 3px var(--indigo-100);
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.form-submit {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* ========== TABLES (for rate schedules) ========== */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    font-size: 0.95rem;
+}
+
+.data-table th,
+.data-table td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--gray-100);
+}
+
+.data-table th {
+    font-family: var(--font-body);
+    font-weight: 600;
+    color: var(--gray-700);
+    background: var(--gray-50);
+    font-size: 0.8rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.data-table td {
+    color: var(--text-primary);
+}
+
+.data-table tbody tr:hover {
+    background: var(--indigo-50);
+}
+
+.data-table .numeric {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    html {
+        font-size: 17px;
+    }
+    
+    .hero {
+        padding: 6rem 1.5rem 1.5rem;
+    }
+    
+    .hero h1 {
+        font-size: 2.25rem;
+    }
+    
+    article {
+        padding: 0 1.5rem 4rem;
+    }
+    
+    .pullquote {
+        margin: 2rem -0.5rem;
+        padding: 1.5rem;
+        padding-left: 1.5rem;
+    }
+    
+    .pullquote blockquote {
+        font-size: 1.2rem;
+    }
+    
+    .nav-inner {
+        padding: 1rem 1.5rem;
+    }
+    
+    .nav-links {
+        gap: 1.25rem;
+    }
+    
+    .nav-links a {
+        font-size: 0.75rem;
+    }
+    
+    .assertion {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .footer-links {
+        gap: 1rem 1.5rem;
+    }
+}
+
+/* ========== SMOOTH ANCHOR OFFSET ========== */
+section[id] {
+    scroll-margin-top: 5rem;
+}

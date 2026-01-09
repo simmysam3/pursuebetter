@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — PursueBetter.org</title>
+    
+    <!-- Meta description -->
+    <meta name="description" content="Get in touch with the PursueBetter.org team. We welcome inquiries from supporters, media, and those interested in our mission.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pursuebetter.org/pages/contact.html">
+    <meta property="og:title" content="Contact — PursueBetter.org">
+    <meta property="og:description" content="Get in touch with the PursueBetter.org team. We welcome inquiries from supporters, media, and those interested in our mission.">
+    <meta property="og:image" content="https://pursuebetter.org/og-image.png">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://pursuebetter.org/pages/contact.html">
+    <meta name="twitter:title" content="Contact — PursueBetter.org">
+    <meta name="twitter:description" content="Get in touch with the PursueBetter.org team. We welcome inquiries from supporters, media, and those interested in our mission.">
+    <meta name="twitter:image" content="https://pursuebetter.org/og-image.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="nav">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">PursueBetter.org</a>
+            <ul class="nav-links">
+                <li><a href="/#premise">Premise</a></li>
+                <li><a href="/#assertions">Core Assertions</a></li>
+                <li><a href="/#participation">Participation</a></li>
+                <li><a href="/pages/our-ask.html" class="nav-cta">Our Ask</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <header class="hero hero-compact">
+        <p class="hero-eyebrow">Get in Touch</p>
+        <h1>Contact Us</h1>
+        <p class="hero-subtitle">We welcome inquiries from supporters, media, and those interested in our mission.</p>
+        <div class="hero-divider"></div>
+    </header>
+    
+    <!-- Contact Content -->
+    <div class="contact-content">
+        <div class="contact-intro">
+            <p>Whether you're interested in supporting our mission, exploring partnership opportunities, or seeking media inquiries, we'd love to hear from you.</p>
+        </div>
+        
+        <!-- Contact Form -->
+        <!-- Note: This form will need a backend or form service (e.g., Netlify Forms, Formspree) to function -->
+        <form class="contact-form" name="contact" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="contact">
+            
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="inquiry-type">Inquiry Type</label>
+                <select id="inquiry-type" name="inquiry-type">
+                    <option value="general">General Inquiry</option>
+                    <option value="support">Financial Support</option>
+                    <option value="media">Media / Press</option>
+                    <option value="partnership">Partnership Opportunity</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            
+            <div class="form-submit">
+                <button type="submit" class="cta-button">Send Message</button>
+            </div>
+        </form>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-logo">PursueBetter.org</div>
+            <p class="footer-text">Sustaining capitalism through participation-based economics.</p>
+            <div class="footer-links">
+                <a href="/#premise">Premise</a>
+                <a href="/#assertions">Assertions</a>
+                <a href="/#participation">Participation</a>
+                <a href="/pages/our-ask.html">Our Ask</a>
+                <a href="/pages/contact.html">Contact</a>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Navigation scroll effect
+        const nav = document.getElementById('nav');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

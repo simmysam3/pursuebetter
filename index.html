@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PursueBetter.Org — Economics of Participation</title>
+    <title>PursueBetter.org — Economics of Participation</title>
     
     <!-- Meta description -->
     <meta name="description" content="Sustaining capitalism and property rights through participation-based transfer payment mechanisms. A framework for post-labor economics.">
@@ -11,14 +11,14 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pursuebetter.org/">
-    <meta property="og:title" content="PursueBetter.Org — Economics of Participation">
+    <meta property="og:title" content="PursueBetter.org — Economics of Participation">
     <meta property="og:description" content="Sustaining capitalism and property rights through participation-based transfer payment mechanisms. A framework for post-labor economics.">
     <meta property="og:image" content="https://pursuebetter.org/og-image.png">
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://pursuebetter.org/">
-    <meta name="twitter:title" content="PursueBetter.Org — Economics of Participation">
+    <meta name="twitter:title" content="PursueBetter.org — Economics of Participation">
     <meta name="twitter:description" content="Sustaining capitalism and property rights through participation-based transfer payment mechanisms. A framework for post-labor economics.">
     <meta name="twitter:image" content="https://pursuebetter.org/og-image.png">
     
@@ -27,466 +27,13 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     
-    <!-- Fonts: Crimson Pro for body (academic serif), Cormorant for display -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
     
-    <style>
-        :root {
-            /* Indigo palette */
-            --indigo-50: #EEF2FF;
-            --indigo-100: #E0E7FF;
-            --indigo-200: #C7D2FE;
-            --indigo-400: #818CF8;
-            --indigo-500: #6366F1;
-            --indigo-600: #4F46E5;
-            --indigo-700: #4338CA;
-            --indigo-800: #3730A3;
-            --indigo-900: #312E81;
-            
-            /* Neutrals */
-            --white: #FFFFFF;
-            --gray-50: #F9FAFB;
-            --gray-100: #F3F4F6;
-            --gray-400: #9CA3AF;
-            --gray-500: #6B7280;
-            --gray-600: #4B5563;
-            --gray-800: #1F2937;
-            --gray-900: #111827;
-            --text-primary: #1a1a2e;
-            
-            /* Typography scale */
-            --font-display: 'Cormorant', Georgia, serif;
-            --font-body: 'Crimson Pro', Georgia, serif;
-            
-            /* Spacing */
-            --content-width: 680px;
-            --wide-width: 900px;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-            font-size: 18px;
-        }
-        
-        body {
-            font-family: var(--font-body);
-            font-size: 1rem;
-            line-height: 1.75;
-            color: var(--text-primary);
-            background: var(--white);
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-        
-        /* ========== NAVIGATION ========== */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--gray-100);
-            transition: box-shadow 0.3s ease;
-        }
-        
-        nav.scrolled {
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-        }
-        
-        .nav-inner {
-            max-width: var(--wide-width);
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .nav-logo {
-            font-family: var(--font-display);
-            font-size: 1.25rem;
-            font-weight: 500;
-            color: var(--gray-900);
-            text-decoration: none;
-            letter-spacing: -0.01em;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-        }
-        
-        .nav-links a {
-            font-family: var(--font-body);
-            font-size: 0.875rem;
-            color: var(--gray-500);
-            text-decoration: none;
-            letter-spacing: 0.02em;
-            transition: color 0.2s ease;
-        }
-        
-        .nav-links a:hover {
-            color: var(--indigo-600);
-        }
-        
-        /* ========== HERO ========== */
-        .hero {
-            padding: 10rem 2rem 2.5rem;
-            max-width: var(--content-width);
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .hero-eyebrow {
-            font-family: var(--font-body);
-            font-size: 0.8rem;
-            font-weight: 500;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--indigo-600);
-            margin-bottom: 1.5rem;
-        }
-        
-        .hero h1 {
-            font-family: var(--font-display);
-            font-size: 3.5rem;
-            font-weight: 400;
-            line-height: 1.15;
-            color: var(--gray-900);
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.02em;
-        }
-        
-        .hero-subtitle {
-            font-family: var(--font-body);
-            font-size: 1.25rem;
-            font-weight: 400;
-            color: var(--gray-500);
-            line-height: 1.6;
-            max-width: 540px;
-            margin: 0 auto;
-        }
-        
-        .hero-divider {
-            width: 60px;
-            height: 1px;
-            background: var(--indigo-200);
-            margin: 1.5rem auto;
-        }
-        
-        /* ========== ARTICLE CONTENT ========== */
-        article {
-            max-width: var(--content-width);
-            margin: 0 auto;
-            padding: 0 2rem 6rem;
-        }
-        
-        article p {
-            margin-bottom: 1.5rem;
-        }
-        
-        article h2 {
-            font-family: var(--font-display);
-            font-size: 2rem;
-            font-weight: 500;
-            color: var(--gray-900);
-            margin: 4rem 0 1.5rem;
-            letter-spacing: -0.01em;
-            line-height: 1.3;
-        }
-        
-        article h2:first-of-type {
-            margin-top: 0;
-        }
-        
-        article h3 {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            font-weight: 500;
-            color: var(--gray-800);
-            margin: 3rem 0 1rem;
-            letter-spacing: -0.01em;
-        }
-        
-        /* Links */
-        article a {
-            color: var(--indigo-600);
-            text-decoration: none;
-            border-bottom: 1px solid var(--indigo-200);
-            transition: border-color 0.2s ease, color 0.2s ease;
-        }
-        
-        article a:hover {
-            color: var(--indigo-700);
-            border-color: var(--indigo-400);
-        }
-        
-        /* ========== PULL QUOTES ========== */
-        .pullquote {
-            position: relative;
-            margin: 3rem 0;
-            padding: 2rem 0 2rem 2rem;
-            border-left: 3px solid var(--indigo-400);
-        }
-        
-        .pullquote blockquote {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            font-style: italic;
-            font-weight: 400;
-            line-height: 1.5;
-            color: var(--gray-800);
-            margin: 0;
-        }
-        
-        .pullquote cite {
-            display: block;
-            font-family: var(--font-body);
-            font-size: 0.875rem;
-            font-style: normal;
-            font-weight: 500;
-            color: var(--gray-500);
-            margin-top: 1rem;
-            letter-spacing: 0.01em;
-        }
-        
-        .pullquote cite span {
-            font-weight: 400;
-            color: var(--gray-400);
-        }
-        
-        /* ========== EMPHASIZED SECTIONS ========== */
-        .emphasis-box {
-            background: var(--indigo-50);
-            border-radius: 4px;
-            padding: 2rem;
-            margin: 2.5rem 0;
-        }
-        
-        .emphasis-box p:last-child {
-            margin-bottom: 0;
-        }
-        
-        /* ========== SECTION DIVIDERS ========== */
-        .section-break {
-            text-align: center;
-            margin: 4rem 0;
-            color: var(--indigo-300);
-            font-size: 1.5rem;
-            letter-spacing: 0.5em;
-        }
-        
-        /* ========== NUMBERED ASSERTIONS ========== */
-        .assertions {
-            margin: 2rem 0;
-        }
-        
-        .assertion {
-            display: flex;
-            gap: 1.25rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .assertion-number {
-            flex-shrink: 0;
-            width: 2rem;
-            height: 2rem;
-            background: var(--indigo-600);
-            color: var(--white);
-            font-family: var(--font-display);
-            font-size: 1rem;
-            font-weight: 500;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 0.15rem;
-        }
-        
-        .assertion p {
-            margin: 0;
-            flex: 1;
-        }
-        
-        .assertion strong {
-            color: var(--gray-900);
-        }
-        
-        /* ========== CTA SECTIONS ========== */
-        .cta-section {
-            background: linear-gradient(135deg, var(--indigo-50) 0%, var(--white) 100%);
-            border: 1px solid var(--indigo-100);
-            border-radius: 6px;
-            padding: 2.5rem;
-            margin: 3rem 0;
-            text-align: center;
-        }
-        
-        .cta-section h3 {
-            font-family: var(--font-display);
-            font-size: 1.75rem;
-            font-weight: 500;
-            color: var(--gray-900);
-            margin: 0 0 1rem;
-        }
-        
-        .cta-section p {
-            color: var(--gray-600);
-            margin-bottom: 1.5rem;
-            max-width: 480px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            font-family: var(--font-body);
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: var(--white);
-            background: var(--indigo-600);
-            padding: 0.875rem 2rem;
-            border-radius: 4px;
-            text-decoration: none;
-            transition: background 0.2s ease, transform 0.2s ease;
-        }
-        
-        .cta-button:hover {
-            background: var(--indigo-700);
-            transform: translateY(-1px);
-        }
-        
-        .cta-secondary {
-            display: inline-block;
-            font-family: var(--font-body);
-            font-size: 0.875rem;
-            color: var(--indigo-600);
-            text-decoration: none;
-            margin-left: 1.5rem;
-            border-bottom: 1px solid var(--indigo-200);
-        }
-        
-        .cta-secondary:hover {
-            color: var(--indigo-700);
-            border-color: var(--indigo-400);
-        }
-        
-        /* ========== FOOTER ========== */
-        footer {
-            border-top: 1px solid var(--gray-100);
-            padding: 3rem 2rem;
-            text-align: center;
-        }
-        
-        .footer-inner {
-            max-width: var(--content-width);
-            margin: 0 auto;
-        }
-        
-        .footer-logo {
-            font-family: var(--font-display);
-            font-size: 1.25rem;
-            font-weight: 500;
-            color: var(--gray-900);
-            margin-bottom: 1rem;
-        }
-        
-        .footer-text {
-            font-size: 0.875rem;
-            color: var(--gray-400);
-            line-height: 1.6;
-        }
-        
-        .footer-links {
-            margin-top: 1.5rem;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-        }
-        
-        .footer-links a {
-            font-size: 0.8rem;
-            color: var(--gray-400);
-            text-decoration: none;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            transition: color 0.2s ease;
-        }
-        
-        .footer-links a:hover {
-            color: var(--indigo-600);
-        }
-        
-        /* ========== READING PROGRESS ========== */
-        .progress-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 2px;
-            background: var(--indigo-500);
-            z-index: 101;
-            width: 0%;
-            transition: width 0.1s linear;
-        }
-        
-        /* ========== RESPONSIVE ========== */
-        @media (max-width: 768px) {
-            html {
-                font-size: 17px;
-            }
-            
-            .hero {
-                padding: 8rem 1.5rem 3rem;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            article {
-                padding: 0 1.5rem 4rem;
-            }
-            
-            .pullquote {
-                margin: 2rem -0.5rem;
-                padding: 1.5rem;
-                padding-left: 1.5rem;
-            }
-            
-            .pullquote blockquote {
-                font-size: 1.25rem;
-            }
-            
-            .nav-links {
-                gap: 1.5rem;
-            }
-            
-            .nav-links a {
-                font-size: 0.75rem;
-            }
-            
-            .assertion {
-                flex-direction: column;
-                gap: 0.75rem;
-            }
-        }
-        
-        /* ========== SMOOTH ANCHOR OFFSET ========== */
-        section[id] {
-            scroll-margin-top: 5rem;
-        }
-    </style>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <!-- Reading progress bar -->
@@ -495,12 +42,12 @@
     <!-- Navigation -->
     <nav id="nav">
         <div class="nav-inner">
-            <a href="#" class="nav-logo">PursueBetter.Org</a>
+            <a href="/" class="nav-logo">PursueBetter.org</a>
             <ul class="nav-links">
-                <li><a href="#premise">Premise</a></li>
-                <li><a href="#assertions">Core Assertions</a></li>
-                <li><a href="#participation">Economics of Participation</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="/#premise">Premise</a></li>
+                <li><a href="/#assertions">Core Assertions</a></li>
+                <li><a href="/#participation">Participation</a></li>
+                <li><a href="/pages/our-ask.html" class="nav-cta">Our Ask</a></li>
             </ul>
         </div>
     </nav>
@@ -508,7 +55,7 @@
     <!-- Hero Section -->
     <header class="hero">
         <p class="hero-eyebrow">A Framework for Post-Labor Economics</p>
-        <h1>PursueBetter.Org</h1>
+        <h1>The Pursuit System</h1>
         <p class="hero-subtitle">Sustaining capitalism and property rights through participation-based transfer payment mechanisms.</p>
         <div class="hero-divider"></div>
     </header>
@@ -575,7 +122,7 @@
             
             <p>We can infer from the 40% of households not contributing income tax in 2025 (Tax Policy Center) that nearly half our population does not have means to contribute to society meaningfully through labor. The automation of transport, and even marginal declines in cognitive labor participation due to AI will render this system unsustainable.</p>
             
-            <p>We must define an alternative means of taxation. As labor is rendered impotent, we have only two paths ahead—tax or confiscation of property and wealth, or taxation on the non-labor means of production.</p>
+            <p>We must define an alternative means of taxation. As labor is rendered impotent, we have only two paths ahead—tax or confiscation of property and wealth, or taxation on the non-labor means of production. <a href="/pages/tax-and-distribution.html">Learn more about tax and distribution →</a></p>
             
             <h3>UBI Does Not Work</h3>
             
@@ -612,32 +159,35 @@
             <div class="emphasis-box">
                 <p>This new economy requires a distribution mechanism that rewards activation—whether that be as spectator, participant, coach, or organizer. For competitive activities a tiered system will allow for increasingly premium rewards over casual leagues—but all focus on a common goal of increasing activations, where higher activation and community participation equates to larger financial rewards.</p>
             </div>
+            
+            <p>For detailed calculations on participation reward structures, see our <a href="/pages/rate-schedules.html">calculated rate schedules</a>.</p>
         </section>
         
         <div class="section-break">• • •</div>
         
-        <section id="contact">
+        <section id="cta">
             <div class="cta-section">
                 <h3>Support Our Mission</h3>
-                <p>Solving the greatest challenge of humanity will not come free. We are looking for patriots who can afford to help—those willing to deeply contemplate the risk not only to the nation's future, but also the very real risk to one's own financial estate.</p>
-                <a href="#" class="cta-button">Contact Us</a>
-                <a href="#" class="cta-secondary">Learn about funding →</a>
+                <p>Solving the greatest challenge of humanity will not come free. We are looking for patriots who can afford to help.</p>
+                <a href="/pages/our-ask.html" class="cta-button">Learn About Our Ask</a>
+                <a href="/pages/contact.html" class="cta-secondary">Contact Us →</a>
             </div>
             
-            <p style="text-align: center; color: var(--gray-500); margin-top: 2rem;">If you are a media outlet or podcaster interested in embracing the conversation, please <a href="#">get in contact</a>.</p>
+            <p class="inline-cta">If you are a media outlet or podcaster interested in embracing the conversation, please <a href="/pages/contact.html">get in contact</a>.</p>
         </section>
     </article>
     
     <!-- Footer -->
     <footer>
         <div class="footer-inner">
-            <div class="footer-logo">PursueBetter.Org</div>
+            <div class="footer-logo">PursueBetter.org</div>
             <p class="footer-text">Sustaining capitalism through participation-based economics.</p>
             <div class="footer-links">
-                <a href="#premise">Premise</a>
-                <a href="#assertions">Assertions</a>
-                <a href="#participation">Participation</a>
-                <a href="#contact">Contact</a>
+                <a href="/#premise">Premise</a>
+                <a href="/#assertions">Assertions</a>
+                <a href="/#participation">Participation</a>
+                <a href="/pages/our-ask.html">Our Ask</a>
+                <a href="/pages/contact.html">Contact</a>
             </div>
         </div>
     </footer>
@@ -660,17 +210,6 @@
             const docHeight = document.documentElement.scrollHeight - window.innerHeight;
             const scrollPercent = (scrollTop / docHeight) * 100;
             progress.style.width = scrollPercent + '%';
-        });
-        
-        // Smooth scroll for anchor links (backup for browsers without CSS support)
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
         });
     </script>
 </body>
